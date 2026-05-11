@@ -13,11 +13,12 @@ import org.testng.annotations.BeforeClass;
 
 import com.google.common.collect.ImmutableMap;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 
 public class BaseTest {
-	AndroidDriver driver;
+	public AndroidDriver driver;
 	
 	@BeforeClass
 	public void configuration() throws MalformedURLException, URISyntaxException {
@@ -48,6 +49,10 @@ public class BaseTest {
 				    "percent", 3.0
 				));
 			} while(canScrollMore);
+	}
+	
+	public void scrollToText(String text) {
+		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + text + "\"));"));
 	}
 		
 	public void swipeAction(WebElement ele, String direction) {
