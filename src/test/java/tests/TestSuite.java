@@ -7,12 +7,13 @@ import io.appium.java_client.AppiumBy;
 import testUtils.BaseTest;
 
 public class TestSuite extends BaseTest {
+	String country = "Argentina";
 	
 	@Test
 	public void runSuite() {
 		driver.findElement(By.id("android:id/text1")).click();
-		scrollToText("Argentina");
-		driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Argentina\")")).click();
+		scrollToText(country);
+		driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + country + "\")")).click();
 		
 		driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Rahul Shetty");
 		
