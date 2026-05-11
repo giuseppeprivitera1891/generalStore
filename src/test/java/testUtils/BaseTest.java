@@ -25,7 +25,8 @@ public class BaseTest {
 		options.setDeviceName("Pixel 8");
 	    options.setChromedriverExecutable("//home//giuseppeprivitera//eclipse-workspace//generalStore//src//test//java//resources//chromedriver");
 	    options.setApp("//home//giuseppeprivitera//eclipse-workspace//generalStore//src//test//java//resources//General-Store.apk");
-			
+	    
+	    
 	    driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
