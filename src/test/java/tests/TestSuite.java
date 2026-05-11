@@ -14,6 +14,10 @@ public class TestSuite extends BaseTest {
 		scrollToText("Argentina");
 		driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Argentina\")")).click();
 		
+		driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Rahul Shetty");
+		
+		driver.findElement(By.id("com.androidsample.generalstore:id/btnLetsShop")).click();
+		
 	}
 
 }
