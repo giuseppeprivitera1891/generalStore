@@ -1,6 +1,13 @@
 package tests;
 
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumBy;
@@ -19,6 +26,14 @@ public class TestSuite extends BaseTest {
 		
 		driver.findElement(By.id("com.androidsample.generalstore:id/btnLetsShop")).click();
 		
+		// product page
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.androidsample.generalstore:id/toolbar_title")));
+		
+		
+		
+			
+			
 	}
 
 }
