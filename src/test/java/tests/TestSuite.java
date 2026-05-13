@@ -15,6 +15,7 @@ import testUtils.BaseTest;
 
 public class TestSuite extends BaseTest {
 	String country = "Argentina";
+	String myProduct = "Jordan 6 Rings";
 	
 	@Test
 	public void runSuite() {
@@ -30,33 +31,15 @@ public class TestSuite extends BaseTest {
 		String productTitle = driver.findElement(By.id("com.androidsample.generalstore:id/toolbar_title")).getText().trim();
 		Assert.assertEquals(productTitle, "Products");
 		
-		List<WebElement> textProducts = driver.findElements(By.id("com.androidsample.generalstore:id/productName"));
-		String myProduct = "Jordan 6 Rings";
-
-		// it searches the product in the list
-		for (WebElement product : textProducts) {
-		    if (product.getText().equalsIgnoreCase(myProduct)) {
-		        driver.findElement(By.id("com.androidsample.generalstore:id/productAddCart")).click();
-		        System.out.println("Product found and added in the cart: " + myProduct);
-		        return; // it exits from the cycle when finds the product
-		    }
-		}
-
-		// if the product is not visible, it scrolls and tries again
+		int productCount = driver.findElements(By.id("com.androidsample.generalstore:id/productName")).size();
 		scrollToText(myProduct);
 
-		// after the scroll, it repeats the research
-		textProducts = driver.findElements(By.id("com.androidsample.generalstore:id/productName"));
-		for (WebElement product : textProducts) {
-		    if (product.getText().equalsIgnoreCase(myProduct)) {
-		        driver.findElement(By.id("com.androidsample.generalstore:id/productAddCart")).click();
-		        System.out.println("Product found after the scroll and added in the cart: " + myProduct);
-		        return;
-		    }
+		for(int i = 0; i < productCount; i++) {
+			String productName = driver.findElements(By.id("com.androidsample.generalstore:id/productName")).get(i).getText();
+			if(productName.equalsIgnoreCase(myProduct)) {
+				driver.findElements(By.id("com.androidsample.generalstore:id/productAddCart")).get(i).click();
+			}
 		}
-
-		// if it do not find the product
-		System.out.println("Product not found: " + myProduct);
 	
 		String getNumberOfArticle = driver.findElement(By.id("com.androidsample.generalstore:id/counterText")).getText().trim();
 		Assert.assertEquals(getNumberOfArticle, "1");
