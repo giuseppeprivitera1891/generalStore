@@ -67,6 +67,11 @@
 	    <artifactId>extentreports</artifactId>
 	    <version>5.1.2</version>
 	</dependency>
+	<dependency>
+		<groupId>giuseppeprivitera</groupId>
+		<artifactId>appium</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
   </dependencies>
 
   <build>
