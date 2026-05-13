@@ -44,6 +44,10 @@ public class TestSuite extends BaseTest {
 		driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.androidsample.generalstore:id/toolbar_title")));
+		String cartTitle = driver.findElement(By.id("com.androidsample.generalstore:id/toolbar_title")).getText().trim();
+		Assert.assertEquals(cartTitle, "Cart");
+		
+		
 	}
 }
 		
