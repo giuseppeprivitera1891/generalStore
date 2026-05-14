@@ -49,8 +49,10 @@ public class FillInformationPage extends AndroidActions {
 	public void setGender(String gender) {
 		if(gender.equalsIgnoreCase("Male")) {
 			maleOption.click();
+			System.out.println("The gender selected is: " + maleOption.getText());
 		} else {
 			femaleOption.click();
+			System.out.println("The gender selected is: " + femaleOption.getText());
 		}
 	}
 
