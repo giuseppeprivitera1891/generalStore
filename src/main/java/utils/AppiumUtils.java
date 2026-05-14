@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import io.appium.java_client.android.AndroidDriver;
 
@@ -18,6 +19,10 @@ public class AppiumUtils {
 	public void waitForElementToAppear(int time, By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+	
+	public void compareString(String currentValue, String expectedValue) {
+		Assert.assertEquals(currentValue, expectedValue);
 	}
 	
 	public Double getFormattedAmount(String amount) {
