@@ -28,6 +28,7 @@ public class ProductPage extends AndroidActions {
 	private List<WebElement> productList;
 	
 	int countProduct;
+	String productName;
 	
 	@AndroidFindBy(id="com.androidsample.generalstore:id/productAddCart")
 	private List<WebElement> addToCartButton;
@@ -37,9 +38,12 @@ public class ProductPage extends AndroidActions {
 	
 	String getNumberOfArticle; 
 	
+	@AndroidFindBy(id="com.androidsample.generalstore:id/appbar_btn_cart")
+	private WebElement cartButton;
+	
 	public void checkProductTitle(String expectedValue) {
 		waitForElementToAppear(10, productTitle, "text", "Products");
-		getProductTitle = productTitle.getText();
+		getProductTitle = productTitle.getText().trim();
 		System.out.println("The title page is: " + getProductTitle);
 		compareString(getProductTitle, expectedValue);
 	}
@@ -49,7 +53,7 @@ public class ProductPage extends AndroidActions {
 		for(String myProducts : chooseProducts) { 
 			 for(int i = 0; i < countProduct; i++){
 				 scrollToText(myProducts);
-				 String productName = productList.get(i).getText();
+				 productName = productList.get(i).getText().trim();
 				 if(productName.equalsIgnoreCase(myProducts)) {
 					 addToCartButton.get(i).click();
 					 System.out.println("The chosen product is: " + productName);
@@ -64,4 +68,7 @@ public class ProductPage extends AndroidActions {
 		compareString(getNumberOfArticle, expectedValue);
 	}
 
+	public void goToTheCartPage() {
+		cartButton.click();
+	}
 }

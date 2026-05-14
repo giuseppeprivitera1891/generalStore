@@ -25,6 +25,7 @@ public class TestSuite extends BaseTest {
 		productPage.checkProductTitle(expectedTitle);
 		productPage.selectProduct(myProducts);
 		productPage.checkNumberOfArticle(expectedNumberOfArticle);
+		productPage.goToTheCartPage();
 		
 		
 		// product page
