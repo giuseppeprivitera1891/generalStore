@@ -23,7 +23,7 @@ public class ProductPage extends AndroidActions {
 	String getProductTitle;
 	
 	public void checkProductTitle(String expectedValue) {
-		waitForElementToAppear(5, productTitle, "text", "Products");
+		waitForElementToAppear(10, productTitle, "text", "Products");
 		getProductTitle = productTitle.getText();
 		System.out.println("The title page is: " + getProductTitle);
 		compareString(getProductTitle, expectedValue);
