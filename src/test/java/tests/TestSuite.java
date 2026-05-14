@@ -20,7 +20,7 @@ public class TestSuite extends BaseTest {
 		fillInformation.selectCountry(country);
 		fillInformation.setName(name);
 		fillInformation.setGender(gender);
-		fillInformation.goToProductPage();
+		fillInformation.goToProductPage("Products");
 		
 		// product page
 		/*
