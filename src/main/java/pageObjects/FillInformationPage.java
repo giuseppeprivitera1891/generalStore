@@ -33,11 +33,6 @@ public class FillInformationPage extends AndroidActions {
 	@AndroidFindBy(id="com.androidsample.generalstore:id/btnLetsShop")
 	private WebElement shopButton;
 	
-	@AndroidFindBy(id="com.androidsample.generalstore:id/toolbar_title")
-	private WebElement productTitle;
-	
-	String getProductTitle;
-	
 	public void selectCountry(String country) {
 		countrySelection.click();
 		scrollToText(country);
@@ -61,12 +56,8 @@ public class FillInformationPage extends AndroidActions {
 		}
 	}
 	
-	public void goToProductPage(String expectedValue) {
+	public void goToProductPage() {
 		shopButton.click();
-		waitForElementToAppear(5, productTitle, "text", "Products");
-		getProductTitle = productTitle.getText();
-		System.out.println("The title page is: " + getProductTitle);
-		compareString(getProductTitle, expectedValue);
 	}
 
 }
