@@ -44,15 +44,6 @@ public class ProductPage extends AndroidActions {
 		compareString(getProductTitle, expectedValue);
 	}
 	
-	/*
-	 * public void selectProduct(String chooseProduct) { countProduct =
-	 * productList.size(); scrollToMultipleTexts(chooseProduct); for(int i = 0; i <
-	 * countProduct; i++) { String productName = productList.get(i).getText();
-	 * if(productName.equalsIgnoreCase(chooseProduct)) {
-	 * addToCartButton.get(0).click(); System.out.println("The chosen product is: "
-	 * + productName); } } }
-	 */
-	
 	public void selectProduct(String[] chooseProducts) {
 		countProduct = productList.size();
 		for(String myProducts : chooseProducts) { 
