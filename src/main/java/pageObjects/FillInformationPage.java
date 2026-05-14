@@ -62,6 +62,8 @@ public class FillInformationPage extends AndroidActions {
 	public void goToProductPage() {
 		shopButton.click();
 		waitForElementToAppear(5, productTitle);
+		System.out.println("The title page is: " + productTitle);
+		
 	}
 
 }
