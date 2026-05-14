@@ -26,7 +26,7 @@ public class TestSuite extends BaseTest {
 		fillInformation.selectCountry(country);
 		fillInformation.setName(name);
 		fillInformation.setGender(gender);
-		fillInformation.accessProductPage();
+		fillInformation.goToProductPage();
 		
 		// product page
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
