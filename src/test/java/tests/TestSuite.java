@@ -13,6 +13,8 @@ import testUtils.BaseTest;
 
 public class TestSuite extends BaseTest {
 	String country = "Argentina";
+	String name = "Klaudia Mondelez";
+	String gender = "Female";
 	String myProduct = "Jordan 6 Rings";
 	
 	@Test
@@ -20,9 +22,10 @@ public class TestSuite extends BaseTest {
 		//driver.findElement(By.id("android:id/text1")).click();
 		//scrollToText(country);
 		//driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + country + "\")")).click();
-		FillInformationPage fillInformationPage = new FillInformationPage(driver);
-		fillInformationPage.selectCountry(country);
-		driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Rahul Shetty");	
+		FillInformationPage fillInformation = new FillInformationPage(driver);
+		fillInformation.selectCountry(country);
+		fillInformation.setName(name);
+		fillInformation.setGender(gender);
 		driver.findElement(By.id("com.androidsample.generalstore:id/btnLetsShop")).click();
 		
 		// product page
@@ -38,6 +41,7 @@ public class TestSuite extends BaseTest {
 			String productName = driver.findElements(By.id("com.androidsample.generalstore:id/productName")).get(i).getText();
 			if(productName.equalsIgnoreCase(myProduct)) {
 				driver.findElements(By.id("com.androidsample.generalstore:id/productAddCart")).get(i).click();
+				System.out.println("The product chose is: " + productName);
 			}
 		}
 	

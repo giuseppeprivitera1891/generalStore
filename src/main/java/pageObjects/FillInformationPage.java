@@ -36,11 +36,14 @@ public class FillInformationPage extends AndroidActions {
 	public void selectCountry(String country) {
 		countrySelection.click();
 		scrollToText(country);
-		driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\""+ country + "\")")).click();
+		WebElement myCountry = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\""+ country + "\")"));
+		myCountry.click();
+		System.out.println("The country selected is: " + myCountry.getText());
 	}
 	
 	public void setName(String name) {
 		nameField.sendKeys(name);
+		System.out.println("The name setted is: " + nameField.getText());
 	}
 	
 	public void setGender(String gender) {
