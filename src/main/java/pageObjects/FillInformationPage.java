@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -33,6 +34,8 @@ public class FillInformationPage extends AndroidActions {
 	@AndroidFindBy(id="com.androidsample.generalstore:id/btnLetsShop")
 	private WebElement shopButton;
 	
+	By productTitle = By.id("com.androidsample.generalstore:id/toolbar_title");
+	
 	public void selectCountry(String country) {
 		countrySelection.click();
 		scrollToText(country);
@@ -58,6 +61,7 @@ public class FillInformationPage extends AndroidActions {
 	
 	public void goToProductPage() {
 		shopButton.click();
+		waitForElementToAppear(5, productTitle);
 	}
 
 }
