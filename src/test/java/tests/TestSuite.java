@@ -12,6 +12,7 @@ public class TestSuite extends BaseTest {
 	String gender = "Female";
 	String myProduct = "Jordan 6 Rings";
 	String expectedTitle = "Products";
+	String expectedNumberOfArticle = "1";
 	
 	@Test
 	public void runSuite() {
@@ -25,6 +26,8 @@ public class TestSuite extends BaseTest {
 		
 		ProductPage productPage = informationPage.goToProductPage();
 		productPage.checkProductTitle(expectedTitle);
+		productPage.selectProduct(myProduct);
+		productPage.checkNumberOfArticle(expectedNumberOfArticle);
 		
 		
 		// product page

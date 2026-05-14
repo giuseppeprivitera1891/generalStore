@@ -32,6 +32,11 @@ public class ProductPage extends AndroidActions {
 	@AndroidFindBy(id="com.androidsample.generalstore:id/productAddCart")
 	private List<WebElement> addToCartButton;
 	
+	@AndroidFindBy(id="com.androidsample.generalstore:id/counterText")
+	private WebElement numberOfArticle;
+	
+	String getNumberOfArticle; 
+	
 	public void checkProductTitle(String expectedValue) {
 		waitForElementToAppear(10, productTitle, "text", "Products");
 		getProductTitle = productTitle.getText();
@@ -41,13 +46,19 @@ public class ProductPage extends AndroidActions {
 	
 	public void selectProduct(String chooseProduct) {
 		scrollToText(chooseProduct);
+		countProduct = productList.size();
 		for(int i = 0; i < countProduct; i++) { 
 			String productName = productList.get(i).getText();
 			if(productName.equalsIgnoreCase(chooseProduct)) {
 				addToCartButton.get(i).click();
-				System.out.println("The product chose is: " + productName);
+				System.out.println("The chosen product is: " + productName);
 				} 
 			}
+	}
+	
+	public void checkNumberOfArticle(String expectedValue) {
+		getNumberOfArticle = numberOfArticle.getText().trim(); 
+		compareString(getNumberOfArticle, expectedValue);
 	}
 
 }
