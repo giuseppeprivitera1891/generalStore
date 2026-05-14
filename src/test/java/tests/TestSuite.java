@@ -3,6 +3,7 @@ package tests;
 import org.testng.annotations.Test;
 
 import pageObjects.InformationPage;
+import pageObjects.ProductPage;
 import testUtils.BaseTest;
 
 public class TestSuite extends BaseTest {
@@ -10,17 +11,21 @@ public class TestSuite extends BaseTest {
 	String name = "Klaudia Mondelez";
 	String gender = "Female";
 	String myProduct = "Jordan 6 Rings";
+	String expectedTitle = "Products";
 	
 	@Test
 	public void runSuite() {
 		//driver.findElement(By.id("android:id/text1")).click();
 		//scrollToText(country);
 		//driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + country + "\")")).click();
-		InformationPage fillInformation = new InformationPage(driver);
-		fillInformation.selectCountry(country);
-		fillInformation.setName(name);
-		fillInformation.setGender(gender);
-		fillInformation.goToProductPage();
+		InformationPage informationPage = new InformationPage(driver);
+		informationPage.selectCountry(country);
+		informationPage.setName(name);
+		informationPage.setGender(gender);
+		
+		ProductPage productPage = informationPage.goToProductPage();
+		productPage.checkProductTitle(expectedTitle);
+		
 		
 		// product page
 		/*
