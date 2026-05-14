@@ -36,7 +36,8 @@ public class InformationPage extends AndroidActions {
 	public void selectCountry(String country) {
 		countrySelection.click();
 		scrollToText(country);
-		WebElement chooseCountry = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\""+ country + "\")"));
+		WebElement chooseCountry = driver.findElement(AppiumBy.androidUIAutomator(
+				"new UiSelector().text(\""+ country + "\")"));
 		chooseCountry.click();
 		System.out.println("The country selected is: " + chooseCountry.getText());
 	}
@@ -56,8 +57,9 @@ public class InformationPage extends AndroidActions {
 		}
 	}
 	
-	public void goToProductPage() {
+	public ProductPage goToProductPage() {
 		shopButton.click();
+		return new ProductPage(driver);
 	}
 
 }
