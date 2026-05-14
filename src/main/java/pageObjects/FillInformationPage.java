@@ -1,6 +1,5 @@
 package pageObjects;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -34,7 +33,10 @@ public class FillInformationPage extends AndroidActions {
 	@AndroidFindBy(id="com.androidsample.generalstore:id/btnLetsShop")
 	private WebElement shopButton;
 	
-	By productTitle = By.id("com.androidsample.generalstore:id/toolbar_title");
+	@AndroidFindBy(id="com.androidsample.generalstore:id/toolbar_title")
+	private WebElement productTitle;
+	
+	String getProductTitle;
 	
 	public void selectCountry(String country) {
 		countrySelection.click();
@@ -59,11 +61,12 @@ public class FillInformationPage extends AndroidActions {
 		}
 	}
 	
-	public void goToProductPage() {
+	public void goToProductPage(String expectedValue) {
 		shopButton.click();
-		waitForElementToAppear(5, productTitle);
-		System.out.println("The title page is: " + productTitle);
-		
+		waitForElementToAppear(5, productTitle, "text", "Products");
+		getProductTitle = productTitle.getText();
+		System.out.println("The title page is: " + getProductTitle);
+		compareString(getProductTitle, expectedValue);
 	}
 
 }
