@@ -36,6 +36,13 @@
 	    <version>10.1.1</version>
 	    <scope>compile</scope>
 	</dependency>
+	<!-- Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<dependency>
+	    <groupId>org.seleniumhq.selenium</groupId>
+	    <artifactId>selenium-java</artifactId>
+	    <version>4.44.0</version>
+	    <scope>compile</scope>
+	</dependency>
 	   <!-- Source: https://mvnrepository.com/artifact/org.testng/testng -->
 	<dependency>
 	    <groupId>org.testng</groupId>
@@ -66,11 +73,6 @@
 	    <groupId>com.aventstack</groupId>
 	    <artifactId>extentreports</artifactId>
 	    <version>5.1.2</version>
-	</dependency>
-	<dependency>
-		<groupId>giuseppeprivitera</groupId>
-		<artifactId>appium</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
 	</dependency>
   </dependencies>
 

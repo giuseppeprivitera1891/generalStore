@@ -55,5 +55,9 @@ public class FillInformationPage extends AndroidActions {
 			System.out.println("The gender selected is: " + femaleOption.getText());
 		}
 	}
+	
+	public void accessProductPage() {
+		shopButton.click();
+	}
 
 }
