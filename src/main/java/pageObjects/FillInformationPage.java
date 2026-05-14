@@ -56,7 +56,7 @@ public class FillInformationPage extends AndroidActions {
 		}
 	}
 	
-	public void accessProductPage() {
+	public void goToProductPage() {
 		shopButton.click();
 	}
 
