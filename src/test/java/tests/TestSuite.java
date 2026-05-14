@@ -11,8 +11,8 @@ public class TestSuite extends BaseTest {
 	String name = "Klaudia Mondelez";
 	String gender = "Female";
 	String expectedTitle = "Products";
-	String[] myProducts = {"Jordan 6 Rings","Air Jordan 4 Retro"};
-	String expectedNumberOfArticle = "2";
+	String[] myProducts = { "Converse All Star", "Air Jordan 4 Retro"};
+	String expectedNumberOfArticle = "3";
 	
 	@Test
 	public void runSuite() {

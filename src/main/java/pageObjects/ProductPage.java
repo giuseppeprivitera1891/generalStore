@@ -58,8 +58,7 @@ public class ProductPage extends AndroidActions {
 				 scrollToText(myProducts);
 				 productName = productList.get(i).getText().trim();
 				 if(productName.equalsIgnoreCase(myProducts)) {
-					// Thread.sleep(1000);
-					 waitForTextToAppear(10, visibleProductList);
+					 waitForTextToAppear(1, visibleProductList);
 					 System.out.println("The chosen product is: " + productName);
 					 addToCartButton.get(i).click();
 				 } 
