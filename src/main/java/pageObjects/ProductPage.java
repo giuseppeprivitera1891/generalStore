@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -26,6 +27,8 @@ public class ProductPage extends AndroidActions {
 	
 	@AndroidFindBy(id="com.androidsample.generalstore:id/productName")
 	private List<WebElement> productList;
+	
+	By visibleProductList = By.id("com.androidsample.generalstore:id/productName");
 	
 	int countProduct;
 	String productName;
@@ -55,11 +58,12 @@ public class ProductPage extends AndroidActions {
 				 scrollToText(myProducts);
 				 productName = productList.get(i).getText().trim();
 				 if(productName.equalsIgnoreCase(myProducts)) {
-					 addToCartButton.get(i).click();
+					// Thread.sleep(1000);
+					 waitForTextToAppear(10, visibleProductList);
 					 System.out.println("The chosen product is: " + productName);
-				} 
-			}
-				
+					 addToCartButton.get(i).click();
+				 } 
+			 }			
 		}
 	}
 	
