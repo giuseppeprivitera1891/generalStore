@@ -39,21 +39,21 @@ public class InformationPage extends AndroidActions {
 		WebElement chooseCountry = driver.findElement(AppiumBy.androidUIAutomator(
 				"new UiSelector().text(\""+ country + "\")"));
 		chooseCountry.click();
-		System.out.println("The country selected is: " + chooseCountry.getText());
+		System.out.println("The selected country is: " + chooseCountry.getText());
 	}
 	
 	public void setName(String name) {
 		nameField.sendKeys(name);
-		System.out.println("The name setted is: " + nameField.getText());
+		System.out.println("The set name is: " + nameField.getText());
 	}
 	
 	public void setGender(String gender) {
 		if(gender.equalsIgnoreCase("Male")) {
 			maleOption.click();
-			System.out.println("The gender selected is: " + maleOption.getText());
+			System.out.println("The selected gender is: " + maleOption.getText());
 		} else {
 			femaleOption.click();
-			System.out.println("The gender selected is: " + femaleOption.getText());
+			System.out.println("The selected gender is: " + femaleOption.getText());
 		}
 	}
 	
