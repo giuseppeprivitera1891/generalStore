@@ -39,6 +39,13 @@ public class AndroidActions extends AppiumUtils {
 	public void scrollToText(String text) {
 		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + text + "\"));"));
 	}
+	
+	public void scrollToMultipleTexts(String text) {
+		driver.findElement(AppiumBy.androidUIAutomator(
+			        "new UiScrollable(new UiSelector().scrollable(true))" +
+			        ".scrollIntoView(new UiSelector().text(\""+ text + "\"));"));
+			    
+	}
 		
 	public void swipeAction(WebElement ele, String direction) {
 		((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
