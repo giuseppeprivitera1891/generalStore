@@ -42,5 +42,13 @@ public class FillInformationPage extends AndroidActions {
 	public void setName(String name) {
 		nameField.sendKeys(name);
 	}
+	
+	public void setGender(String gender) {
+		if(gender.equalsIgnoreCase("Male")) {
+			maleOption.click();
+		} else {
+			femaleOption.click();
+		}
+	}
 
 }
