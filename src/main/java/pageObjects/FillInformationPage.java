@@ -36,9 +36,9 @@ public class FillInformationPage extends AndroidActions {
 	public void selectCountry(String country) {
 		countrySelection.click();
 		scrollToText(country);
-		WebElement myCountry = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\""+ country + "\")"));
-		myCountry.click();
-		System.out.println("The country selected is: " + myCountry.getText());
+		WebElement chooseCountry = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\""+ country + "\")"));
+		chooseCountry.click();
+		System.out.println("The country selected is: " + chooseCountry.getText());
 	}
 	
 	public void setName(String name) {
