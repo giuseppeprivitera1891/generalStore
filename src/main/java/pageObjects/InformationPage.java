@@ -9,10 +9,10 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import utils.AndroidActions;
 
-public class FillInformationPage extends AndroidActions {
+public class InformationPage extends AndroidActions {
 	public AndroidDriver driver;
 
-	public FillInformationPage(AndroidDriver driver) {
+	public InformationPage(AndroidDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);

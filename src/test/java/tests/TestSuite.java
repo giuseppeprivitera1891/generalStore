@@ -2,7 +2,7 @@ package tests;
 
 import org.testng.annotations.Test;
 
-import pageObjects.FillInformationPage;
+import pageObjects.InformationPage;
 import testUtils.BaseTest;
 
 public class TestSuite extends BaseTest {
@@ -16,7 +16,7 @@ public class TestSuite extends BaseTest {
 		//driver.findElement(By.id("android:id/text1")).click();
 		//scrollToText(country);
 		//driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + country + "\")")).click();
-		FillInformationPage fillInformation = new FillInformationPage(driver);
+		InformationPage fillInformation = new InformationPage(driver);
 		fillInformation.selectCountry(country);
 		fillInformation.setName(name);
 		fillInformation.setGender(gender);
