@@ -29,12 +29,6 @@ public class TestSuite extends BaseTest {
 		
 		// product page
 		/*
-		 * WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(
-		 * "com.androidsample.generalstore:id/toolbar_title"))); String productTitle =
-		 * driver.findElement(By.id("com.androidsample.generalstore:id/toolbar_title")).
-		 * getText().trim(); Assert.assertEquals(productTitle, "Products");
-		 * 
 		 * int productCount =
 		 * driver.findElements(By.id("com.androidsample.generalstore:id/productName")).
 		 * size(); scrollToText(myProduct);
