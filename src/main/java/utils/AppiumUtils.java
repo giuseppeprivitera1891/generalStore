@@ -7,12 +7,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 
 public class AppiumUtils {
-	AndroidDriver driver;
+	AppiumDriver driver;
 
-	public AppiumUtils(AndroidDriver driver) {
+	public AppiumUtils(AppiumDriver driver) {
 		this.driver = driver;
 	}
 
