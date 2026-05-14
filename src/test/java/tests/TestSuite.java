@@ -10,8 +10,7 @@ public class TestSuite extends BaseTest {
 	String country = "Argentina";
 	String name = "Klaudia Mondelez";
 	String gender = "Female";
-	String myProduct = "Jordan 6 Rings";
-	String myProduct2 = "Air Jordan 4 Retro";
+	String[] myProducts = {"Jordan 6 Rings","Air Jordan 4 Retro"};
 	String expectedTitle = "Products";
 	String expectedNumberOfArticle = "2";
 	
@@ -27,8 +26,7 @@ public class TestSuite extends BaseTest {
 		
 		ProductPage productPage = informationPage.goToProductPage();
 		productPage.checkProductTitle(expectedTitle);
-		productPage.selectProduct(myProduct);
-		productPage.selectProduct(myProduct2);
+		productPage.selectProduct(myProducts);
 		productPage.checkNumberOfArticle(expectedNumberOfArticle);
 		
 		
