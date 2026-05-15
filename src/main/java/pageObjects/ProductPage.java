@@ -71,7 +71,8 @@ public class ProductPage extends AndroidActions {
 		compareString(getNumberOfArticle, expectedValue);
 	}
 
-	public void goToTheCartPage() {
+	public CartPage goToTheCartPage() {
 		cartButton.click();
+		return new CartPage(driver); 
 	}
 }
