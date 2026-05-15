@@ -31,16 +31,8 @@ public class TestSuite extends BaseTest {
 		CartPage cartPage = productPage.goToTheCartPage();
 		cartPage.checkCartTitle(expectedCartTitle);
 		cartPage.checkTotalPrice();
-	
-		/*
-		 * driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")
-		 * ).click();
-		 * 
-		 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(
-		 * "com.androidsample.generalstore:id/toolbar_title"))); String cartTitle =
-		 * driver.findElement(By.id("com.androidsample.generalstore:id/toolbar_title")).
-		 * getText().trim(); Assert.assertEquals(cartTitle, "Cart");
-		 */
+		cartPage.checkTerms();
+		
 		
 	}
 }
