@@ -2,6 +2,7 @@ package tests;
 
 import org.testng.annotations.Test;
 
+import pageObjects.CartPage;
 import pageObjects.InformationPage;
 import pageObjects.ProductPage;
 import testUtils.BaseTest;
@@ -13,6 +14,7 @@ public class TestSuite extends BaseTest {
 	String expectedTitle = "Products";
 	String[] myProducts = { "Converse All Star", "Air Jordan 4 Retro"};
 	String expectedNumberOfArticle = "2";
+	String expectedCartTitle = "Cart";
 	
 	@Test
 	public void runSuite() {
@@ -25,9 +27,9 @@ public class TestSuite extends BaseTest {
 		productPage.checkProductTitle(expectedTitle);
 		productPage.selectProduct(myProducts);
 		productPage.checkNumberOfArticle(expectedNumberOfArticle);
-		productPage.goToTheCartPage();
 		
-		
+		CartPage cartPage = productPage.goToTheCartPage();
+		cartPage.checkCartTitle(expectedCartTitle);
 	
 		/*
 		 * driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")

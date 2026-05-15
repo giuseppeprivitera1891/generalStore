@@ -25,7 +25,7 @@ public class CartPage extends AndroidActions {
 	
 	public void checkCartTitle(String expectedValue) {
 		getCartTitle = cartTitle.getText().trim();
-		System.out.println(getCartTitle);
+		System.out.println("The title of cart page is: " + getCartTitle);
 		Assert.assertEquals(getCartTitle, expectedValue);
 	}
 
