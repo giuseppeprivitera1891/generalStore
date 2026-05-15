@@ -1,13 +1,18 @@
 package pageObjects;
 
+import org.openqa.selenium.support.PageFactory;
+
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import utils.AndroidActions;
 
 public class CartPage extends AndroidActions {
+	public AndroidDriver driver;
 
 	public CartPage(AndroidDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		this.driver = driver;
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
 }
