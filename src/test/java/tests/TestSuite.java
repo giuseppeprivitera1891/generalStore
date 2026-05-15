@@ -12,7 +12,7 @@ public class TestSuite extends BaseTest {
 	String gender = "Female";
 	String expectedTitle = "Products";
 	String[] myProducts = { "Converse All Star", "Air Jordan 4 Retro"};
-	String expectedNumberOfArticle = "3";
+	String expectedNumberOfArticle = "2";
 	
 	@Test
 	public void runSuite() {
@@ -28,7 +28,7 @@ public class TestSuite extends BaseTest {
 		productPage.goToTheCartPage();
 		
 		
-		// product page
+	
 		/*
 		 * driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")
 		 * ).click();
