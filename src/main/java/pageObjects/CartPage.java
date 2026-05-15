@@ -31,9 +31,22 @@ public class CartPage extends AndroidActions {
 	@AndroidFindBy(uiAutomator="new UiSelector().resourceId(\"com.androidsample.generalstore:id/totalAmountLbl\")")
 	private WebElement totalPrice;
 	
+	@AndroidFindBy(uiAutomator="new UiSelector().resourceId(\"com.androidsample.generalstore:id/termsButton\")")
+	private WebElement termsButton;
+	
+	@AndroidFindBy(id="com.androidsample.generalstore:id/alertTitle")
+	private WebElement termsTitle;
+	
+	@AndroidFindBy(id="android:id/message")
+	private WebElement termsMessage;
+	
+	@AndroidFindBy(className="android.widget.Button")
+	private WebElement closeTermsButton;
+	
 	int countPrice;
 	double sum = 0, getProductPrice, getTotalPrice;
-	String temporaryProductPrice, temporaryTotalPrice;
+	String temporaryProductPrice, temporaryTotalPrice, getTermsTitle, getTermsMessage, expectedTermsTitle, expectedTermsMessage;
+	
 	
 	public void checkCartTitle(String expectedValue) {
 		getCartTitle = cartTitle.getText().trim();
@@ -55,5 +68,19 @@ public class CartPage extends AndroidActions {
 		Assert.assertEquals(sum, getTotalPrice);
 	}
 	
+	public void checkTerms() {
+		longPressAction(termsButton);
+		getTermsTitle = termsTitle.getText().trim();
+		System.out.println("The title of terms is: " + getTermsTitle);
+		getTermsMessage = termsMessage.getText().trim();
+		System.out.println("The message of terms is: " + getTermsMessage);
+		expectedTermsTitle = "Terms Of Conditions";
+		expectedTermsMessage = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+				+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
+				+ "when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+		Assert.assertEquals(getTermsTitle, expectedTermsTitle);
+		Assert.assertEquals(getTermsMessage, expectedTermsMessage);		
+		closeTermsButton.click();
+	}
 
 }
