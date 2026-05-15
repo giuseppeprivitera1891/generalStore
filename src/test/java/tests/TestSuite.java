@@ -30,6 +30,7 @@ public class TestSuite extends BaseTest {
 		
 		CartPage cartPage = productPage.goToTheCartPage();
 		cartPage.checkCartTitle(expectedCartTitle);
+		cartPage.checkTotalPrice();
 	
 		/*
 		 * driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")
