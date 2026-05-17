@@ -33,7 +33,7 @@ public class AppiumUtils {
 	
 	public void verifyCheckedBox(WebElement element) {
 		System.out.println("The checkbox is not selected: " + element.isSelected());
-		element.isSelected();
+		element.click();
 		System.out.println("The checkbox is selected: " + element.isSelected());
 	}
 	
