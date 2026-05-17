@@ -12,13 +12,16 @@ import io.appium.java_client.AppiumDriver;
 
 public class AppiumUtils {
 	AppiumDriver driver;
+	WebDriverWait wait;
+	Double price;
+	boolean checkedBox;
 
 	public AppiumUtils(AppiumDriver driver) {
 		this.driver = driver;
 	}
 
 	public void waitForElementToAppear(int time, WebElement element, String attribute, String value) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(time));
 		wait.until(ExpectedConditions.attributeContains(element, attribute, value));
 	}
 	
@@ -32,13 +35,13 @@ public class AppiumUtils {
 	}
 	
 	public void verifyCheckedBox(WebElement element) {
-		System.out.println("The checkbox is not selected: " + element.isSelected());
 		element.click();
-		System.out.println("The checkbox is selected: " + element.isSelected());
+		checkedBox = element.isSelected(); 
+		Assert.assertFalse(checkedBox);
 	}
 	
 	public Double getFormattedAmount(String amount) {
-		Double price = Double.parseDouble(amount.substring(1));
+		price = Double.parseDouble(amount.substring(1));
 		return price;
 	}
 }
