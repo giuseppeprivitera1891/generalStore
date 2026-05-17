@@ -13,6 +13,10 @@ import utils.AndroidActions;
 
 public class CartPage extends AndroidActions {
 	public AndroidDriver driver;
+	int countPrice;
+	double sum = 0, getProductPrice, getTotalPrice;
+	String temporaryProductPrice, temporaryTotalPrice, getTermsTitle, getTermsMessage, expectedTermsTitle, 
+	expectedTermsMessage;
 
 	public CartPage(AndroidDriver driver) {
 		super(driver);
@@ -43,18 +47,12 @@ public class CartPage extends AndroidActions {
 	@AndroidFindBy(className="android.widget.Button")
 	private WebElement closeTermsBox;
 	
-	@AndroidFindBy(uiAutomator="new UiSelector().text(\"Send me e-mails on discounts related to selected products in future\")")
+	@AndroidFindBy(className="android.widget.CheckBox")
 	private WebElement emailCheckButton;
 	
 	@AndroidFindBy(id="com.androidsample.generalstore:id/btnProceed")
 	private WebElement websiteButton;
-	
-	int countPrice;
-	double sum = 0, getProductPrice, getTotalPrice;
-	String temporaryProductPrice, temporaryTotalPrice, getTermsTitle, getTermsMessage, expectedTermsTitle, 
-	expectedTermsMessage;
-	
-	
+
 	public void checkCartTitle(String expectedValue) {
 		getCartTitle = cartTitle.getText().trim();
 		System.out.println("The title of cart page is: " + getCartTitle);
@@ -91,7 +89,7 @@ public class CartPage extends AndroidActions {
 	}
 	
 	public void receiveEmail() {
-		verifyCheckedElement(emailCheckButton);
+		emailCheckButton.click();
 	}
 	
 	public void gotToWebSite() {

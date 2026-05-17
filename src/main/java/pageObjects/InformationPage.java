@@ -11,6 +11,7 @@ import utils.AndroidActions;
 
 public class InformationPage extends AndroidActions {
 	public AndroidDriver driver;
+	WebElement chooseCountry;
 
 	public InformationPage(AndroidDriver driver) {
 		super(driver);
@@ -36,7 +37,7 @@ public class InformationPage extends AndroidActions {
 	public void selectCountry(String country) {
 		countrySelection.click();
 		scrollToText(country);
-		WebElement chooseCountry = driver.findElement(AppiumBy.androidUIAutomator(
+		chooseCountry = driver.findElement(AppiumBy.androidUIAutomator(
 				"new UiSelector().text(\""+ country + "\")"));
 		chooseCountry.click();
 		System.out.println("The selected country is: " + chooseCountry.getText());
@@ -52,7 +53,7 @@ public class InformationPage extends AndroidActions {
 			maleOption.click();
 			System.out.println("The selected gender is: " + maleOption.getText());
 		} else {
-			femaleOption.click();
+		    femaleOption.click();
 			System.out.println("The selected gender is: " + femaleOption.getText());
 		}
 	}

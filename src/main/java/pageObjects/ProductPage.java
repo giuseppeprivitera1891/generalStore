@@ -2,7 +2,6 @@ package pageObjects;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -13,6 +12,8 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class ProductPage extends AndroidActions {
 	public AndroidDriver driver;
+	String getNumberOfArticle, getProductTitle, productName; 
+	int countProduct;
 
 	public ProductPage(AndroidDriver driver) {
 		super(driver);
@@ -23,23 +24,14 @@ public class ProductPage extends AndroidActions {
 	@AndroidFindBy(id="com.androidsample.generalstore:id/toolbar_title")
 	private WebElement productTitle;
 	
-	String getProductTitle;
-	
 	@AndroidFindBy(id="com.androidsample.generalstore:id/productName")
 	private List<WebElement> productList;
-	
-	By visibleProductList = By.id("com.androidsample.generalstore:id/productName");
-	
-	int countProduct;
-	String productName;
-	
+		
 	@AndroidFindBy(id="com.androidsample.generalstore:id/productAddCart")
 	private List<WebElement> addToCartButton;
 	
 	@AndroidFindBy(id="com.androidsample.generalstore:id/counterText")
 	private WebElement numberOfArticle;
-	
-	String getNumberOfArticle; 
 	
 	@AndroidFindBy(id="com.androidsample.generalstore:id/appbar_btn_cart")
 	private WebElement cartButton;
@@ -58,7 +50,6 @@ public class ProductPage extends AndroidActions {
 				 scrollToText(myProducts);
 				 productName = productList.get(i).getText().trim();
 				 if(productName.equalsIgnoreCase(myProducts)) {
-					 waitForTextToAppear(1, visibleProductList);
 					 System.out.println("The chosen product is: " + productName);
 					 addToCartButton.get(i).click();
 				 } 
