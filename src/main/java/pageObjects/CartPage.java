@@ -56,15 +56,16 @@ public class CartPage extends AndroidActions {
 	
 	@AndroidFindBy(id="com.androidsample.generalstore:id/btnProceed")
 	private WebElement websiteButton;
+	
+	By readMoreElement = By.id("KByQx");
+	By acceptAllElement = By.id("L2AGLb");
 
 	public void checkCartTitle(String expectedValue) {
+		waitForElementToAppear(10, cartTitle, "text", "Cart");
 		getCartTitle = cartTitle.getText().trim();
 		System.out.println("The title of cart page is: " + getCartTitle);
 		Assert.assertEquals(getCartTitle, expectedValue);
 	}
-	
-	By readMoreElement = By.xpath("(//div[contains(text(),'Continua a leggere')])[1]");
-	By acceptAllElement = By.xpath("//div[normalize-space()='Accetta tutto']");
 	
 	public void checkTotalPrice() {
 		countPrice = productPrice.size();
@@ -99,12 +100,13 @@ public class CartPage extends AndroidActions {
 		emailCheckButton.click();
 	}
 	
-	public void gotToWebSite() {
+	public void gotToWebSite() throws InterruptedException {
 		websiteButton.click();
 		
 		// to get the contexts
+	//	Thread.sleep(5000);
 		Set<String> context = driver.getContextHandles();
-		  
+			  
 		for(String contexts : context) { 
 			System.out.println(contexts); 
 		}
@@ -115,6 +117,7 @@ public class CartPage extends AndroidActions {
 			try {
 				if (driver.findElement(readMoreElement).isDisplayed()) {
 					driver.findElement(readMoreElement).click();
+					Thread.sleep(500);
 					attempt++;
 					} else if (driver.findElement(acceptAllElement).isDisplayed()) {
 						driver.findElement(acceptAllElement).click();
@@ -126,7 +129,11 @@ public class CartPage extends AndroidActions {
 		                e.printStackTrace();
 		                }
 		}
+		
+		
 	}
+	
+
 
 
 }

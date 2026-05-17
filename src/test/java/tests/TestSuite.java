@@ -15,9 +15,10 @@ public class TestSuite extends BaseTest {
 	String[] myProducts = {"Converse All Star", "Air Jordan 4 Retro"};
 	String expectedNumberOfArticle = "2";
 	String expectedCartTitle = "Cart";
+	String search = "Linux";
 	
 	@Test
-	public void runSuite(){
+	public void runSuite() throws InterruptedException{
 		InformationPage informationPage = new InformationPage(driver);
 		informationPage.selectCountry(country);
 		informationPage.setName(name);
@@ -34,6 +35,7 @@ public class TestSuite extends BaseTest {
 		cartPage.checkTerms();
 		cartPage.receiveEmail();
 		cartPage.gotToWebSite();
+		
 		
 		
 	}

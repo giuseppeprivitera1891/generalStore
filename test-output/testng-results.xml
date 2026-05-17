@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-17T18:50:57 CEST" name="Default suite" finished-at="2026-05-17T18:51:29 CEST" duration-ms="32074">
+  <suite started-at="2026-05-17T19:55:24 CEST" name="Default suite" finished-at="2026-05-17T19:55:55 CEST" duration-ms="31062">
     <groups>
     </groups>
-    <test started-at="2026-05-17T18:50:57 CEST" name="Default test" finished-at="2026-05-17T18:51:29 CEST" duration-ms="32074">
+    <test started-at="2026-05-17T19:55:24 CEST" name="Default test" finished-at="2026-05-17T19:55:55 CEST" duration-ms="31062">
       <class name="tests.TestSuite">
-        <test-method is-config="true" signature="configuration()[pri:0, instance:tests.TestSuite@765d7657]" started-at="2026-05-17T18:50:57 CEST" name="configuration" finished-at="2026-05-17T18:51:00 CEST" duration-ms="3013" status="PASS">
+        <test-method is-config="true" signature="configuration()[pri:0, instance:tests.TestSuite@618b19ad]" started-at="2026-05-17T19:55:24 CEST" name="configuration" finished-at="2026-05-17T19:55:26 CEST" duration-ms="2809" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configuration -->
-        <test-method signature="runSuite()[pri:0, instance:tests.TestSuite@765d7657]" started-at="2026-05-17T18:51:00 CEST" name="runSuite" finished-at="2026-05-17T18:51:28 CEST" duration-ms="28413" status="PASS">
+        <test-method signature="runSuite()[pri:0, instance:tests.TestSuite@618b19ad]" started-at="2026-05-17T19:55:26 CEST" name="runSuite" finished-at="2026-05-17T19:55:54 CEST" duration-ms="27569" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runSuite -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestSuite@765d7657]" started-at="2026-05-17T18:51:28 CEST" name="tearDown" finished-at="2026-05-17T18:51:29 CEST" duration-ms="626" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestSuite@618b19ad]" started-at="2026-05-17T19:55:54 CEST" name="tearDown" finished-at="2026-05-17T19:55:55 CEST" duration-ms="661" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
