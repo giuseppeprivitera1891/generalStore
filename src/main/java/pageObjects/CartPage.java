@@ -87,7 +87,6 @@ public class CartPage extends AndroidActions {
 	}
 	
 	public void receiveEmail() {
-		emailCheckButton.click();
 		verifyCheckedBox(emailCheckButton);
 	}
 
