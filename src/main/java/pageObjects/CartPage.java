@@ -43,6 +43,9 @@ public class CartPage extends AndroidActions {
 	@AndroidFindBy(className="android.widget.Button")
 	private WebElement closeTermsButton;
 	
+	@AndroidFindBy(uiAutomator="new UiSelector().text(\"Send me e-mails on discounts related to selected products in future\")")
+	private WebElement emailCheckButton;
+	
 	int countPrice;
 	double sum = 0, getProductPrice, getTotalPrice;
 	String temporaryProductPrice, temporaryTotalPrice, getTermsTitle, getTermsMessage, expectedTermsTitle, expectedTermsMessage;
@@ -81,6 +84,11 @@ public class CartPage extends AndroidActions {
 		Assert.assertEquals(getTermsTitle, expectedTermsTitle);
 		Assert.assertEquals(getTermsMessage, expectedTermsMessage);		
 		closeTermsButton.click();
+	}
+	
+	public void receiveEmail() {
+		emailCheckButton.click();
+		verifyCheckedButton(emailCheckButton);
 	}
 
 }
