@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -102,12 +103,12 @@ public class CartPage extends AndroidActions {
 		websiteButton.click();
 		
 		// to get the contexts
-		/*
-		 * Set<String> context = driver.getContextHandles();
-		 * 
-		 * for(String contexts : context) { System.out.println(contexts); }
-		 */
-		
+		Set<String> context = driver.getContextHandles();
+		  
+		for(String contexts : context) { 
+			System.out.println(contexts); 
+		}
+		 	
 		driver.context("WEBVIEW_com.androidsample.generalstore");
 		
 		while (attempt < maxAttempts) {
@@ -126,5 +127,6 @@ public class CartPage extends AndroidActions {
 		                }
 		}
 	}
+
 
 }
