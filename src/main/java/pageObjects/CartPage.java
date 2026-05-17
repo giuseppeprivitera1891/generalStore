@@ -15,6 +15,8 @@ import utils.AndroidActions;
 public class CartPage extends AndroidActions {
 	public AndroidDriver driver;
 	int countPrice;
+	int maxAttempts = 5;
+	int attempt = 0;
 	double sum = 0, getProductPrice, getTotalPrice;
 	String temporaryProductPrice, temporaryTotalPrice, getTermsTitle, getTermsMessage, expectedTermsTitle, 
 	expectedTermsMessage;
@@ -62,8 +64,6 @@ public class CartPage extends AndroidActions {
 	
 	By readMoreElement = By.xpath("(//div[contains(text(),'Continua a leggere')])[1]");
 	By acceptAllElement = By.xpath("//div[normalize-space()='Accetta tutto']");
-	int maxAttempts = 5;
-	int attempt = 0;
 	
 	public void checkTotalPrice() {
 		countPrice = productPrice.size();
@@ -98,7 +98,7 @@ public class CartPage extends AndroidActions {
 		emailCheckButton.click();
 	}
 	
-	public void gotToWebSite() throws InterruptedException {
+	public void gotToWebSite() {
 		websiteButton.click();
 		
 		// to get the contexts
@@ -120,11 +120,11 @@ public class CartPage extends AndroidActions {
 						break;
 						} else {
 							break;
-		                }
-		            } catch (Exception e) {
+							}
+		         } catch (Exception e) {
 		                e.printStackTrace();
-		            }
-		        }
+		                }
+		}
 	}
 
 }

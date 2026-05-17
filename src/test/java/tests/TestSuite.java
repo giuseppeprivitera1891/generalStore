@@ -17,7 +17,7 @@ public class TestSuite extends BaseTest {
 	String expectedCartTitle = "Cart";
 	
 	@Test
-	public void runSuite() throws InterruptedException {
+	public void runSuite(){
 		InformationPage informationPage = new InformationPage(driver);
 		informationPage.selectCountry(country);
 		informationPage.setName(name);
