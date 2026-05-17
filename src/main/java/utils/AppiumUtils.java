@@ -31,8 +31,10 @@ public class AppiumUtils {
 		Assert.assertEquals(currentValue, expectedValue);
 	}
 	
-	public void verifyCheckedButton(WebElement element) {
+	public void verifyCheckedBox(WebElement element) {
+		System.out.println("The checkbox is not selected: " + element.isSelected());
 		element.isSelected();
+		System.out.println("The checkbox is selected: " + element.isSelected());
 	}
 	
 	public Double getFormattedAmount(String amount) {
