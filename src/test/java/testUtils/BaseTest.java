@@ -17,10 +17,9 @@ public class BaseTest {
 	@BeforeClass
 	public void configuration() throws MalformedURLException, URISyntaxException {
 		UiAutomator2Options options = new UiAutomator2Options();
-		options.setDeviceName("Pixel 8");
-	    options.setChromedriverExecutable("//home//giuseppeprivitera//eclipse-workspace//generalStore//src//test//java//resources//chromedriver");
+		options.setDeviceName("Pixel 10 Pro");
+		options.setChromedriverExecutable("//home//giuseppeprivitera//eclipse-workspace//generalStore//src//test//java//resources//chromedriver");
 	    options.setApp("//home//giuseppeprivitera//eclipse-workspace//generalStore//src//test//java//resources//General-Store.apk");
-	    options.setCapability("browserName", "Chrome");   
 	    
 	    driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

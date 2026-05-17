@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -59,6 +60,11 @@ public class CartPage extends AndroidActions {
 		Assert.assertEquals(getCartTitle, expectedValue);
 	}
 	
+	By readMoreElement = By.xpath("(//div[contains(text(),'Continua a leggere')])[1]");
+	By acceptAllElement = By.xpath("//div[normalize-space()='Accetta tutto']");
+	int maxAttempts = 5;
+	int attempt = 0;
+	
 	public void checkTotalPrice() {
 		countPrice = productPrice.size();
 		for(int i = 0; i < countPrice; i++) {
@@ -92,8 +98,33 @@ public class CartPage extends AndroidActions {
 		emailCheckButton.click();
 	}
 	
-	public void gotToWebSite() {
+	public void gotToWebSite() throws InterruptedException {
 		websiteButton.click();
+		
+		// to get the contexts
+		/*
+		 * Set<String> context = driver.getContextHandles();
+		 * 
+		 * for(String contexts : context) { System.out.println(contexts); }
+		 */
+		
+		driver.context("WEBVIEW_com.androidsample.generalstore");
+		
+		while (attempt < maxAttempts) {
+			try {
+				if (driver.findElement(readMoreElement).isDisplayed()) {
+					driver.findElement(readMoreElement).click();
+					attempt++;
+					} else if (driver.findElement(acceptAllElement).isDisplayed()) {
+						driver.findElement(acceptAllElement).click();
+						break;
+						} else {
+							break;
+		                }
+		            } catch (Exception e) {
+		                e.printStackTrace();
+		            }
+		        }
 	}
 
 }
