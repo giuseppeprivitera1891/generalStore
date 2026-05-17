@@ -1,5 +1,6 @@
 package utils;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -26,6 +27,11 @@ public class AndroidActions extends AppiumUtils {
 	public void scrollToText(String text) {
 		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))" +
 			        ".scrollIntoView(new UiSelector().text(\""+ text + "\"));"));
+	}
+	
+	public void scrollToElement(WebElement element) {
+		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))" +
+			        ".scrollIntoView(new UiSelector().text(\""+ element + "\"));"));
 	}
 		
 	public void swipeAction(WebElement ele, String direction) {

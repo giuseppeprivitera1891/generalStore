@@ -12,12 +12,12 @@ public class TestSuite extends BaseTest {
 	String name = "Klaudia Mondelez";
 	String gender = "Female";
 	String expectedTitle = "Products";
-	String[] myProducts = { "Converse All Star", "Air Jordan 4 Retro"};
+	String[] myProducts = {"Converse All Star", "Air Jordan 4 Retro"};
 	String expectedNumberOfArticle = "2";
 	String expectedCartTitle = "Cart";
 	
 	@Test
-	public void runSuite() {
+	public void runSuite() throws InterruptedException {
 		InformationPage informationPage = new InformationPage(driver);
 		informationPage.selectCountry(country);
 		informationPage.setName(name);
