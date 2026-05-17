@@ -31,6 +31,10 @@ public class AppiumUtils {
 		Assert.assertEquals(currentValue, expectedValue);
 	}
 	
+	public void verifyCheckedButton(WebElement element) {
+		element.isSelected();
+	}
+	
 	public Double getFormattedAmount(String amount) {
 		Double price = Double.parseDouble(amount.substring(1));
 		return price;
