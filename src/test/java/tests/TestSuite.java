@@ -33,6 +33,7 @@ public class TestSuite extends BaseTest {
 		cartPage.checkTotalPrice();
 		cartPage.checkTerms();
 		cartPage.receiveEmail();
+		cartPage.gotToWebSite();
 		
 		
 	}

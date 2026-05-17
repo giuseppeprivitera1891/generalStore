@@ -34,7 +34,7 @@ public class AppiumUtils {
 		Assert.assertEquals(currentValue, expectedValue);
 	}
 	
-	public void verifyCheckedBox(WebElement element) {
+	public void verifyCheckedElement(WebElement element) {
 		element.click();
 		checkedBox = element.isSelected(); 
 		Assert.assertFalse(checkedBox);

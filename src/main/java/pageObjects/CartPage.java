@@ -46,9 +46,13 @@ public class CartPage extends AndroidActions {
 	@AndroidFindBy(uiAutomator="new UiSelector().text(\"Send me e-mails on discounts related to selected products in future\")")
 	private WebElement emailCheckButton;
 	
+	@AndroidFindBy(id="com.androidsample.generalstore:id/btnProceed")
+	private WebElement websiteButton;
+	
 	int countPrice;
 	double sum = 0, getProductPrice, getTotalPrice;
-	String temporaryProductPrice, temporaryTotalPrice, getTermsTitle, getTermsMessage, expectedTermsTitle, expectedTermsMessage;
+	String temporaryProductPrice, temporaryTotalPrice, getTermsTitle, getTermsMessage, expectedTermsTitle, 
+	expectedTermsMessage;
 	
 	
 	public void checkCartTitle(String expectedValue) {
@@ -87,7 +91,11 @@ public class CartPage extends AndroidActions {
 	}
 	
 	public void receiveEmail() {
-		verifyCheckedBox(emailCheckButton);
+		verifyCheckedElement(emailCheckButton);
+	}
+	
+	public void gotToWebSite() {
+		websiteButton.click();
 	}
 
 }
