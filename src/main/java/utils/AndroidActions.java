@@ -22,19 +22,6 @@ public class AndroidActions extends AppiumUtils {
 		((JavascriptExecutor) driver).executeScript("mobile: longClickGesture", ImmutableMap.of(
 		"elementId", ((RemoteWebElement) ele).getId(), "duration", 2000));
 	}
-		
-	public void scrollToEnd() {
-		// no prior idea
-		boolean canScrollMore;
-			
-		do {
-			canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
-					"left", 100, "top", 100, "width", 200, "height", 200,
-				    "direction", "down",
-				    "percent", 3.0
-				));
-			} while(canScrollMore);
-	}
 	
 	public void scrollToText(String text) {
 		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))" +
