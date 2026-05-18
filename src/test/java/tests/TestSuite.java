@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import pageObjects.CartPage;
 import pageObjects.InformationPage;
 import pageObjects.ProductPage;
+import pageObjects.WebViewPage;
 import testUtils.BaseTest;
 
 public class TestSuite extends BaseTest {
@@ -34,10 +35,9 @@ public class TestSuite extends BaseTest {
 		cartPage.checkTotalPrice();
 		cartPage.checkTerms();
 		cartPage.receiveEmail();
-		cartPage.gotToWebSite();
-		
-		
-		
+		WebViewPage webViewPage = cartPage.gotToWebSite();
+		webViewPage.searchProduct();
+			
 	}
 }
 		
