@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pageObjects.CartPage;
 import pageObjects.InformationPage;
 import pageObjects.ProductPage;
-import pageObjects.WebViewPage;
+import pageObjects.SearchProductPage;
 import testUtils.BaseTest;
 
 public class TestSuite extends BaseTest {
@@ -16,7 +16,7 @@ public class TestSuite extends BaseTest {
 	String[] myProducts = {"Converse All Star", "Air Jordan 4 Retro"};
 	String expectedNumberOfArticle = "2";
 	String expectedCartTitle = "Cart";
-	String search = "Linux";
+	String search = "Geox";
 	
 	@Test
 	public void runSuite() throws InterruptedException{
@@ -35,8 +35,10 @@ public class TestSuite extends BaseTest {
 		cartPage.checkTotalPrice();
 		cartPage.checkTerms();
 		cartPage.receiveEmail();
-		WebViewPage webViewPage = cartPage.gotToWebSite();
-		webViewPage.searchProduct();
+		cartPage.gotToWebSite();
+		
+		SearchProductPage webViewPage = new SearchProductPage(driver);
+		webViewPage.searchProduct(search);
 			
 	}
 }

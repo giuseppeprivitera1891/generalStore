@@ -5,20 +5,22 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class WebViewPage {
+public class SearchProductPage {
 	WebDriver driver;
 	int maxAttempts = 5;
 	int attempt = 0;
 
-	public WebViewPage(WebDriver driver) {
+	public SearchProductPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	
 	By readMoreElement = By.id("KByQx");
 	By acceptAllElement = By.id("L2AGLb");
+	By searchBar = By.className("gLFyf");
+	By goToWebSite = By.cssSelector("a[href='https://www.geox.com/it-IT/']");
 	
-	public void searchProduct() {
+	public void searchProduct(String search) {
 		while (attempt < maxAttempts) {
 			try {
 				if (driver.findElement(readMoreElement).isDisplayed()) {
@@ -36,9 +38,9 @@ public class WebViewPage {
 		                }
 		}
 		
-		driver.findElement(By.className("gLFyf")).sendKeys("GEOX");
-		driver.findElement(By.className("gLFyf")).sendKeys(Keys.ENTER);
-		
+		driver.findElement(searchBar).sendKeys(search);
+		driver.findElement(searchBar).sendKeys(Keys.ENTER);	
+		driver.findElement(goToWebSite).click();
 	}
 
 }
