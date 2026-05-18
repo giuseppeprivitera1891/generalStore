@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -104,7 +105,7 @@ public class CartPage extends AndroidActions {
 		websiteButton.click();
 		
 		// to get the contexts
-	//	Thread.sleep(5000);
+	    Thread.sleep(1000);
 		Set<String> context = driver.getContextHandles();
 			  
 		for(String contexts : context) { 
@@ -130,6 +131,8 @@ public class CartPage extends AndroidActions {
 		                }
 		}
 		
+		driver.findElement(By.className("gLFyf")).sendKeys("GNU/Linux");
+		driver.findElement(By.className("gLFyf")).sendKeys(Keys.ENTER);
 		
 	}
 	
