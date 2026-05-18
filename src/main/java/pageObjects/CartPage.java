@@ -59,7 +59,7 @@ public class CartPage extends AndroidActions {
 	By acceptAllElement = By.id("L2AGLb");
 
 	public void checkCartTitle(String expectedValue) {
-		waitForElementToAppear(10, cartTitle, "text", "Cart");
+		waitForElementToAppear(20, cartTitle, "text", "Cart");
 		getCartTitle = cartTitle.getText().trim();
 		System.out.println("The title of cart page is: " + getCartTitle);
 		Assert.assertEquals(getCartTitle, expectedValue);
@@ -98,7 +98,7 @@ public class CartPage extends AndroidActions {
 		emailCheckButton.click();
 	}
 	
-	public WebViewPage gotToWebSite() throws InterruptedException {
+	public void gotToWebSite() throws InterruptedException {
 		websiteButton.click();
 		
 		// to get the contexts
@@ -111,10 +111,6 @@ public class CartPage extends AndroidActions {
 		 	
 		driver.context("WEBVIEW_com.androidsample.generalstore");
 		
-		return new WebViewPage(driver);	
 	}
 	
-
-
-
 }

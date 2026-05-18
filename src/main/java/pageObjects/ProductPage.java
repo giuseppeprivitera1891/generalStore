@@ -37,7 +37,7 @@ public class ProductPage extends AndroidActions {
 	private WebElement cartButton;
 	
 	public void checkProductTitle(String expectedValue) {
-		waitForElementToAppear(10, productTitle, "text", "Products");
+		waitForElementToAppear(20, productTitle, "text", "Products");
 		getProductTitle = productTitle.getText().trim();
 		System.out.println("The title page is: " + getProductTitle);
 		compareString(getProductTitle, expectedValue);
