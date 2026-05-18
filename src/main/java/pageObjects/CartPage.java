@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -17,8 +16,6 @@ import utils.AndroidActions;
 public class CartPage extends AndroidActions {
 	public AndroidDriver driver;
 	int countPrice;
-	int maxAttempts = 5;
-	int attempt = 0;
 	double sum = 0, getProductPrice, getTotalPrice;
 	String temporaryProductPrice, temporaryTotalPrice, getTermsTitle, getTermsMessage, expectedTermsTitle, 
 	expectedTermsMessage;
@@ -101,11 +98,11 @@ public class CartPage extends AndroidActions {
 		emailCheckButton.click();
 	}
 	
-	public void gotToWebSite() throws InterruptedException {
+	public WebViewPage gotToWebSite() throws InterruptedException {
 		websiteButton.click();
 		
 		// to get the contexts
-	    Thread.sleep(1000);
+	    Thread.sleep(500);
 		Set<String> context = driver.getContextHandles();
 			  
 		for(String contexts : context) { 
@@ -114,26 +111,7 @@ public class CartPage extends AndroidActions {
 		 	
 		driver.context("WEBVIEW_com.androidsample.generalstore");
 		
-		while (attempt < maxAttempts) {
-			try {
-				if (driver.findElement(readMoreElement).isDisplayed()) {
-					driver.findElement(readMoreElement).click();
-					Thread.sleep(500);
-					attempt++;
-					} else if (driver.findElement(acceptAllElement).isDisplayed()) {
-						driver.findElement(acceptAllElement).click();
-						break;
-						} else {
-							break;
-							}
-		         } catch (Exception e) {
-		                e.printStackTrace();
-		                }
-		}
-		
-		driver.findElement(By.className("gLFyf")).sendKeys("GNU/Linux");
-		driver.findElement(By.className("gLFyf")).sendKeys(Keys.ENTER);
-		
+		return new WebViewPage(driver);	
 	}
 	
 
