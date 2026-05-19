@@ -12,6 +12,8 @@ import utils.AndroidActions;
 public class InformationPage extends AndroidActions {
 	public AndroidDriver driver;
 	WebElement chooseCountry;
+	String attribute = "text";
+	String value = "Afghanistan";
 
 	public InformationPage(AndroidDriver driver) {
 		super(driver);
@@ -35,6 +37,7 @@ public class InformationPage extends AndroidActions {
 	private WebElement shopButton;
 	
 	public void selectCountry(String country) {
+		waitForElementToAppear(20, countrySelection, attribute, value, driver);
 		countrySelection.click();
 		scrollToText(country);
 		chooseCountry = driver.findElement(AppiumBy.androidUIAutomator(

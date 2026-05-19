@@ -28,7 +28,7 @@ public class CartPage extends AndroidActions {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
-	@AndroidFindBy(id="com.androidsample.generalstore:id/toolbar_title")
+	@AndroidFindBy(uiAutomator="new UiSelector().resourceId(\"com.androidsample.generalstore:id/toolbar_title\")")
 	private WebElement cartTitle;
 	
 	String getCartTitle;
