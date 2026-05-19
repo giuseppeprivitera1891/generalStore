@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -20,6 +21,7 @@ public class CartPage extends AndroidActions {
 	expectedTermsMessage;
 	String attribute = "text";
 	String value = "Cart";
+	String webViewContext = "WEBVIEW_com.androidsample.generalstore";
 
 	public CartPage(AndroidDriver driver) {
 		super(driver);
@@ -99,10 +101,19 @@ public class CartPage extends AndroidActions {
 		emailCheckButton.click();
 	}
 	
+	public void getContext() {
+		// it gets the contexts
+		Set<String> context = driver.getContextHandles();
+			  
+		for(String contexts : context) { 
+			System.out.println(contexts); 
+		}
+	}
+	
 	public void gotToWebSite() {
 		websiteButton.click();
-		getContext(driver);
-		driver.context("WEBVIEW_com.androidsample.generalstore");
+		getContext();
+		driver.context(webViewContext);
 		
 	}
 	
