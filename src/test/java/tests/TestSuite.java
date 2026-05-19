@@ -16,9 +16,10 @@ public class TestSuite extends BaseTest {
 	String expectedNumberOfArticle = "2";
 	String expectedCartTitle = "Cart";
 	String search = "Geox";
+	SearchProductPage searchProduct;
 	
 	@Test
-	public void runSuite() throws InterruptedException{
+	public void runSuite() {
 		informationPage.selectCountry(country);
 		informationPage.setName(name);
 		informationPage.setGender(gender);
@@ -35,8 +36,8 @@ public class TestSuite extends BaseTest {
 		cartPage.receiveEmail();
 		cartPage.gotToWebSite();
 		
-		SearchProductPage webViewPage = new SearchProductPage(driver);
-		webViewPage.searchProduct(search);
+		SearchProductPage searchProduct = new SearchProductPage(driver);
+		searchProduct.findProduct(search);
 			
 	}
 }

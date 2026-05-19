@@ -20,7 +20,7 @@ public class SearchProductPage {
 	By searchBar = By.className("gLFyf");
 	By goToWebSite = By.cssSelector("a[href='https://www.geox.com/it-IT/']");
 	
-	public void searchProduct(String search) {
+	public void findProduct(String search) {
 		while (attempt < maxAttempts) {
 			try {
 				if (driver.findElement(readMoreElement).isDisplayed()) {
