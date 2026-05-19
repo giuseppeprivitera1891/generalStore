@@ -10,15 +10,10 @@ import org.testng.Assert;
 import io.appium.java_client.AppiumDriver;
 
 public class AppiumUtils {
-	AppiumDriver driver;
 	WebDriverWait wait;
 	Double price;
 
-	public AppiumUtils(AppiumDriver driver) {
-		this.driver = driver;
-	}
-
-	public void waitForElementToAppear(int time, WebElement element, String attribute, String value) {
+	public void waitForElementToAppear(int time, WebElement element, String attribute, String value, AppiumDriver driver) {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(time));
 		wait.until(ExpectedConditions.attributeContains(element, attribute, value));
 	}
