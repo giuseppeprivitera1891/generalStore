@@ -21,6 +21,7 @@ public class SearchProductPage {
 	By goToWebSite = By.cssSelector("a[href='https://www.geox.com/it-IT/']");
 	
 	public void findProduct(String search) {
+		// it has up to five attempts to close the cookie pop-up 
 		while (attempt < maxAttempts) {
 			try {
 				if (driver.findElement(readMoreElement).isDisplayed()) {

@@ -37,9 +37,12 @@ public class InformationPage extends AndroidActions {
 	private WebElement shopButton;
 	
 	public void selectCountry(String country) {
+		// it waits for the drop menu
 		waitForElementToAppear(20, countrySelection, attribute, value, driver);
 		countrySelection.click();
+		// it scrolls to the chosen country
 		scrollToText(country);
+		// it finds the country and clicks in the chosen country
 		chooseCountry = driver.findElement(AppiumBy.androidUIAutomator(
 				"new UiSelector().text(\""+ country + "\")"));
 		chooseCountry.click();
