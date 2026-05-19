@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.time.Duration;
 import java.util.Properties;
 
 import org.testng.annotations.AfterClass;
@@ -24,7 +23,8 @@ public class BaseTest {
 	@BeforeClass
 	public void configuration() throws URISyntaxException, IOException {
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//java//resources//data.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + 
+				"//src//main//java//resources//data.properties");
 		
 		prop.load(fis);
 		uri = prop.getProperty("uri");
@@ -36,8 +36,8 @@ public class BaseTest {
 	    options.setApp(System.getProperty("user.dir") + "//src//test//java//resources//General-Store.apk");
 	    
 	    driver = new AndroidDriver(new URI(prop.getProperty("uri")).toURL(), options);
-	 //   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	    
+	    // it creates the InformationPage instance
 	    informationPage = new InformationPage(driver);
 	}
 		
