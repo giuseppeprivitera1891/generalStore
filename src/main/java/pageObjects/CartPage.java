@@ -71,14 +71,20 @@ public class CartPage extends AndroidActions {
 	public void checkTotalPrice() {
 		countPrice = productPrice.size();
 		for(int i = 0; i < countPrice; i++) {
+			// it gets the price of all products
 			temporaryProductPrice = productPrice.get(i).getText().trim();
+			// it converts the price in double type
 			getProductPrice = getFormattedAmount(temporaryProductPrice);
+			// it sums the price
 			sum = sum + getProductPrice;
 		}
 		System.out.println("The sum of the products is: " + sum);
+		// it gets the total price
 		temporaryTotalPrice = totalPrice.getText().trim();
+		// it converts the total price in double type
 		getTotalPrice = getFormattedAmount(temporaryTotalPrice);
 		System.out.println("The total price is: " + getTotalPrice);
+		// it compares the price of all products with the total price
 		Assert.assertEquals(sum, getTotalPrice);
 	}
 	
@@ -102,7 +108,7 @@ public class CartPage extends AndroidActions {
 	}
 	
 	public void getContext() {
-		// it gets the contexts
+		// it gets all contexts
 		Set<String> context = driver.getContextHandles();
 			  
 		for(String contexts : context) { 

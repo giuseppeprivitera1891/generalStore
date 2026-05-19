@@ -46,10 +46,13 @@ public class ProductPage extends AndroidActions {
 	}
 	
 	public void selectProduct(String[] chooseProducts) {
+		// it gets the size of the products list
 		countProduct = productList.size();
 		for(String myProducts : chooseProducts) { 
 			 for(int i = 0; i < countProduct; i++){
+				 // it scrolls to the chosen product
 				 scrollToText(myProducts);
+				 // it gets the name of the product from the products list
 				 productName = productList.get(i).getText().trim();
 				 if(productName.equalsIgnoreCase(myProducts)) {
 					 System.out.println("The chosen product is: " + productName);
