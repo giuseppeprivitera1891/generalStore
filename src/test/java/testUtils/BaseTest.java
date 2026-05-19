@@ -11,26 +11,28 @@ import org.testng.annotations.BeforeClass;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
 import pageObjects.InformationPage;
 
 public class BaseTest {
 	public AndroidDriver driver;
-	public AppiumDriverLocalService service;
+	UiAutomator2Options options;
 	public InformationPage informationPage;
 	String uri, androidDeviceName;
 	
 	@BeforeClass
 	public void configuration() throws URISyntaxException, IOException {
 		Properties prop = new Properties();
+		// it reads the properties from 'data.properties' file
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + 
 				"//src//main//java//resources//data.properties");
 		
+		// it loads the file
 		prop.load(fis);
 		uri = prop.getProperty("uri");
 		androidDeviceName = prop.getProperty("androidDeviceName");
 		
-		UiAutomator2Options options = new UiAutomator2Options();
+		// it creates an instance of UiAutomaor2Options
+		options = new UiAutomator2Options();
 		options.setDeviceName(System.getProperty("androidDeviceName"));
 		options.setChromedriverExecutable(System.getProperty("user.dir") + "//src//test//java//resources//chromedriver");
 	    options.setApp(System.getProperty("user.dir") + "//src//test//java//resources//General-Store.apk");
