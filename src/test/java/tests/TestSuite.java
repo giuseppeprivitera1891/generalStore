@@ -3,7 +3,6 @@ package tests;
 import org.testng.annotations.Test;
 
 import pageObjects.CartPage;
-import pageObjects.InformationPage;
 import pageObjects.ProductPage;
 import pageObjects.SearchProductPage;
 import testUtils.BaseTest;
@@ -20,7 +19,6 @@ public class TestSuite extends BaseTest {
 	
 	@Test
 	public void runSuite() throws InterruptedException{
-		InformationPage informationPage = new InformationPage(driver);
 		informationPage.selectCountry(country);
 		informationPage.setName(name);
 		informationPage.setGender(gender);

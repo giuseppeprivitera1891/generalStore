@@ -10,9 +10,11 @@ import org.testng.annotations.BeforeClass;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import pageObjects.InformationPage;
 
 public class BaseTest {
 	public AndroidDriver driver;
+	public InformationPage informationPage;
 	
 	@BeforeClass
 	public void configuration() throws MalformedURLException, URISyntaxException {
@@ -23,6 +25,8 @@ public class BaseTest {
 	    
 	    driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	    
+	    informationPage = new InformationPage(driver);
 	}
 		
 	@AfterClass
