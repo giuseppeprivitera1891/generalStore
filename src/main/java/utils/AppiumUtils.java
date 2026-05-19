@@ -1,7 +1,6 @@
 package utils;
 
 import java.time.Duration;
-import java.util.Set;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,7 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
 
 public class AppiumUtils {
 	WebDriverWait wait;
@@ -29,12 +27,4 @@ public class AppiumUtils {
 		return price;
 	}
 	
-	public void getContext(AndroidDriver driver) {
-		// it gets the contexts
-		Set<String> context = driver.getContextHandles();
-			  
-		for(String contexts : context) { 
-			System.out.println(contexts); 
-		}
-	}
 }
