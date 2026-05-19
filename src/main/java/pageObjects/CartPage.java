@@ -19,6 +19,8 @@ public class CartPage extends AndroidActions {
 	double sum = 0, getProductPrice, getTotalPrice;
 	String temporaryProductPrice, temporaryTotalPrice, getTermsTitle, getTermsMessage, expectedTermsTitle, 
 	expectedTermsMessage;
+	String attribute = "text";
+	String value = "Cart";
 
 	public CartPage(AndroidDriver driver) {
 		super(driver);
@@ -59,7 +61,7 @@ public class CartPage extends AndroidActions {
 	By acceptAllElement = By.id("L2AGLb");
 
 	public void checkCartTitle(String expectedValue) {
-		waitForElementToAppear(20, cartTitle, "text", "Cart");
+		waitForElementToAppear(20, cartTitle, attribute, value, driver);
 		getCartTitle = cartTitle.getText().trim();
 		System.out.println("The title of cart page is: " + getCartTitle);
 		Assert.assertEquals(getCartTitle, expectedValue);

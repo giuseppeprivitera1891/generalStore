@@ -14,6 +14,8 @@ public class ProductPage extends AndroidActions {
 	public AndroidDriver driver;
 	String getNumberOfArticle, getProductTitle, productName; 
 	int countProduct;
+	String attribute = "text";
+	String value = "Products";
 
 	public ProductPage(AndroidDriver driver) {
 		super(driver);
@@ -37,7 +39,7 @@ public class ProductPage extends AndroidActions {
 	private WebElement cartButton;
 	
 	public void checkProductTitle(String expectedValue) {
-		waitForElementToAppear(20, productTitle, "text", "Products");
+		waitForElementToAppear(20, productTitle, attribute, value, driver);
 		getProductTitle = productTitle.getText().trim();
 		System.out.println("The title page is: " + getProductTitle);
 		compareString(getProductTitle, expectedValue);
