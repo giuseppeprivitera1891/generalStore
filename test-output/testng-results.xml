@@ -1,21 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-20T15:44:48 CEST" name="Suite" finished-at="2026-05-20T15:45:25 CEST" duration-ms="37295">
+  <suite started-at="2026-05-20T17:33:44 CEST" name="Suite" finished-at="2026-05-20T17:34:17 CEST" duration-ms="32257">
     <groups>
     </groups>
-    <test started-at="2026-05-20T15:44:48 CEST" name="Test" finished-at="2026-05-20T15:45:25 CEST" duration-ms="37295">
+    <test started-at="2026-05-20T17:33:44 CEST" name="Test" finished-at="2026-05-20T17:34:17 CEST" duration-ms="32257">
       <class name="org.giuseppeprivitera.tests.TestSuite">
-        <test-method is-config="true" signature="configuration()[pri:0, instance:org.giuseppeprivitera.tests.TestSuite@f58853c]" started-at="2026-05-20T15:44:48 CEST" name="configuration" finished-at="2026-05-20T15:44:51 CEST" duration-ms="3021" status="PASS">
+        <test-method is-config="true" signature="configuration()[pri:0, instance:org.giuseppeprivitera.tests.TestSuite@1224144a]" started-at="2026-05-20T17:33:44 CEST" name="configuration" finished-at="2026-05-20T17:33:48 CEST" duration-ms="3267" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configuration -->
-        <test-method signature="runSuite()[pri:0, instance:org.giuseppeprivitera.tests.TestSuite@f58853c]" started-at="2026-05-20T15:44:51 CEST" name="runSuite" finished-at="2026-05-20T15:45:25 CEST" duration-ms="33599" status="PASS">
+        <test-method signature="runSuite()[pri:0, instance:org.giuseppeprivitera.tests.TestSuite@1224144a]" started-at="2026-05-20T17:33:48 CEST" name="runSuite" finished-at="2026-05-20T17:34:15 CEST" duration-ms="27710" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for attribute or CSS value "text" to contain "Products". Current value: "General Store".
+(tried for 20 seconds with 500 milliseconds interval)
+Build info: version: '4.44.0', revision: 'da2039b'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1023-oem', java.version: '21.0.10'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:app: /home/giuseppeprivitera/ecl..., appium:appActivity: com.androidsample.generalst..., appium:appPackage: com.androidsample.generalstore, appium:automationName: UIAutomator2, appium:chromedriverExecutable: /home/giuseppeprivitera/ecl..., appium:databaseEnabled: false, appium:desired: {app: /home/giuseppeprivitera/ecl..., automationName: UIAutomator2, chromedriverExecutable: /home/giuseppeprivitera/ecl..., platformName: ANDROID}, appium:deviceApiLevel: 37, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone16k_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1280x2856, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3, appium:platformVersion: 17, appium:statBarHeight: 156, appium:takesScreenshot: true, appium:viewportRect: {height: 2700, left: 0, top: 156, width: 1280}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: c0879d77-5898-4aa8-a02e-354cf276581a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for attribute or CSS value "text" to contain "Products". Current value: "General Store".
+(tried for 20 seconds with 500 milliseconds interval)
+Build info: version: '4.44.0', revision: 'da2039b'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1023-oem', java.version: '21.0.10'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:app: /home/giuseppeprivitera/ecl..., appium:appActivity: com.androidsample.generalst..., appium:appPackage: com.androidsample.generalstore, appium:automationName: UIAutomator2, appium:chromedriverExecutable: /home/giuseppeprivitera/ecl..., appium:databaseEnabled: false, appium:desired: {app: /home/giuseppeprivitera/ecl..., automationName: UIAutomator2, chromedriverExecutable: /home/giuseppeprivitera/ecl..., platformName: ANDROID}, appium:deviceApiLevel: 37, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone16k_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1280x2856, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3, appium:platformVersion: 17, appium:statBarHeight: 156, appium:takesScreenshot: true, appium:viewportRect: {height: 2700, left: 0, top: 156, width: 1280}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: c0879d77-5898-4aa8-a02e-354cf276581a
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+at org.giuseppeprivitera.utils.AppiumUtils.waitForElementToAppear(AppiumUtils.java:24)
+at org.giuseppeprivitera.pageObjects.ProductPage.checkProductTitle(ProductPage.java:42)
+at org.giuseppeprivitera.tests.TestSuite.runSuite(TestSuite.java:27)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runSuite -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.giuseppeprivitera.tests.TestSuite@f58853c]" started-at="2026-05-20T15:45:25 CEST" name="tearDown" finished-at="2026-05-20T15:45:25 CEST" duration-ms="645" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.giuseppeprivitera.tests.TestSuite@1224144a]" started-at="2026-05-20T17:34:16 CEST" name="tearDown" finished-at="2026-05-20T17:34:17 CEST" duration-ms="364" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -35,7 +35,7 @@ public class AppiumUtils {
 	
 	public String getScreenshotPath(String testCaseName, AppiumDriver driver) throws IOException {
 		source = driver.getScreenshotAs(OutputType.FILE);
-		destinationFile = System.getProperty("user.dir") + "//reports//screenshots" + testCaseName + ".png";
+		destinationFile = System.getProperty("user.dir") + "//reports//screenshots//" + testCaseName + ".png";
 		FileUtils.copyFile(source, new File(destinationFile));
 		return destinationFile;
 	}
