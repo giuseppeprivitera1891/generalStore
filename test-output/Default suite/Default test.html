@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed May 20 15:35:59 CEST 2026</td>
+<td>Started on:</td><td>Wed May 20 17:26:37 CEST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>38 seconds (38985 ms)</td>
+<tr><td>Total time:</td><td>61 seconds (61989 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -77,8 +77,103 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='org.giuseppeprivitera.tests.TestSuite.runSuite()'><b>runSuite</b><br>Test class: org.giuseppeprivitera.tests.TestSuite</td>
-<td></td>
-<td>35</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: &apos;4.44.0&apos;, revision: &apos;da2039b&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1023-oem&apos;, java.version: &apos;21.0.10&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [69f67e5c-25d9-49f8-b8d1-b7e11fe9b279, findElement {using=-android uiautomator, value=new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(&quot;Argentin&quot;));}]
+Capabilities {appium:app: /home/giuseppeprivitera/ecl..., appium:appActivity: com.androidsample.generalst..., appium:appPackage: com.androidsample.generalstore, appium:automationName: UIAutomator2, appium:chromedriverExecutable: /home/giuseppeprivitera/ecl..., appium:databaseEnabled: false, appium:desired: {app: /home/giuseppeprivitera/ecl..., automationName: UIAutomator2, chromedriverExecutable: /home/giuseppeprivitera/ecl..., platformName: ANDROID}, appium:deviceApiLevel: 37, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone16k_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1280x2856, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3, appium:platformVersion: 17, appium:statBarHeight: 156, appium:takesScreenshot: true, appium:viewportRect: {height: 2700, left: 0, top: 156, width: 1280}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 69f67e5c-25d9-49f8-b8d1-b7e11fe9b279
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:224)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:243)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:173)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:67)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:421)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:415)
+	at org.giuseppeprivitera.utils.AndroidActions.scrollToText(AndroidActions.java:26)
+	at org.giuseppeprivitera.pageObjects.InformationPage.selectCountry(InformationPage.java:44)
+	at org.giuseppeprivitera.tests.TestSuite.runSuite(TestSuite.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1778801068", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1778801068'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: &apos;4.44.0&apos;, revision: &apos;da2039b&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.17.0-1023-oem&apos;, java.version: &apos;21.0.10&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [69f67e5c-25d9-49f8-b8d1-b7e11fe9b279, findElement {using=-android uiautomator, value=new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(&quot;Argentin&quot;));}]
+Capabilities {appium:app: /home/giuseppeprivitera/ecl..., appium:appActivity: com.androidsample.generalst..., appium:appPackage: com.androidsample.generalstore, appium:automationName: UIAutomator2, appium:chromedriverExecutable: /home/giuseppeprivitera/ecl..., appium:databaseEnabled: false, appium:desired: {app: /home/giuseppeprivitera/ecl..., automationName: UIAutomator2, chromedriverExecutable: /home/giuseppeprivitera/ecl..., platformName: ANDROID}, appium:deviceApiLevel: 37, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone16k_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1280x2856, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3, appium:platformVersion: 17, appium:statBarHeight: 156, appium:takesScreenshot: true, appium:viewportRect: {height: 2700, left: 0, top: 156, width: 1280}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 69f67e5c-25d9-49f8-b8d1-b7e11fe9b279
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:224)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:243)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:173)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:67)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:421)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:415)
+	at org.giuseppeprivitera.utils.AndroidActions.scrollToText(AndroidActions.java:26)
+	at org.giuseppeprivitera.pageObjects.InformationPage.selectCountry(InformationPage.java:44)
+	at org.giuseppeprivitera.tests.TestSuite.runSuite(TestSuite.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>58</td>
 <td>org.giuseppeprivitera.tests.TestSuite@6771beb3</td></tr>
 </table><p>
 </body>
