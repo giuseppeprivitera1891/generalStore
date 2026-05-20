@@ -1,0 +1,6 @@
+/home/giuseppeprivitera/eclipse-workspace/generalStore/src/main/java/org/giuseppeprivitera/pageObjects/CartPage.java
+/home/giuseppeprivitera/eclipse-workspace/generalStore/src/main/java/org/giuseppeprivitera/pageObjects/InformationPage.java
+/home/giuseppeprivitera/eclipse-workspace/generalStore/src/main/java/org/giuseppeprivitera/pageObjects/ProductPage.java
+/home/giuseppeprivitera/eclipse-workspace/generalStore/src/main/java/org/giuseppeprivitera/pageObjects/SearchProductPage.java
+/home/giuseppeprivitera/eclipse-workspace/generalStore/src/main/java/org/giuseppeprivitera/utils/AndroidActions.java
+/home/giuseppeprivitera/eclipse-workspace/generalStore/src/main/java/org/giuseppeprivitera/utils/AppiumUtils.java

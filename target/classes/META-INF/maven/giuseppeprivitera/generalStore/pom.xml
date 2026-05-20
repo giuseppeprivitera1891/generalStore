@@ -88,7 +88,7 @@
 					        <version>3.5.5</version>
 					        <configuration>
 					          <suiteXmlFiles>
-					            <suiteXmlFile>testNGSuites/testng.xml</suiteXmlFile>
+					            <suiteXmlFile>testng.xml</suiteXmlFile>
 					          </suiteXmlFiles>
 					        </configuration>
 				      </plugin>
@@ -97,6 +97,7 @@
 	  	</build>	
 	  </profile>
   </profiles>
+
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
@@ -113,7 +114,10 @@
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.13.0</version>
+          <version>3.15.0</version>
+		  <configuration>
+		    <release>21</release>
+		  </configuration> 
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
