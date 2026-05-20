@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-20T15:28:02 CEST" name="Default suite" finished-at="2026-05-20T15:28:40 CEST" duration-ms="37808">
+  <suite started-at="2026-05-20T15:44:48 CEST" name="Suite" finished-at="2026-05-20T15:45:25 CEST" duration-ms="37295">
     <groups>
     </groups>
-    <test started-at="2026-05-20T15:28:02 CEST" name="Default test" finished-at="2026-05-20T15:28:40 CEST" duration-ms="37808">
+    <test started-at="2026-05-20T15:44:48 CEST" name="Test" finished-at="2026-05-20T15:45:25 CEST" duration-ms="37295">
       <class name="org.giuseppeprivitera.tests.TestSuite">
-        <test-method is-config="true" signature="configuration()[pri:0, instance:org.giuseppeprivitera.tests.TestSuite@6771beb3]" started-at="2026-05-20T15:28:02 CEST" name="configuration" finished-at="2026-05-20T15:28:05 CEST" duration-ms="3062" status="PASS">
+        <test-method is-config="true" signature="configuration()[pri:0, instance:org.giuseppeprivitera.tests.TestSuite@f58853c]" started-at="2026-05-20T15:44:48 CEST" name="configuration" finished-at="2026-05-20T15:44:51 CEST" duration-ms="3021" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configuration -->
-        <test-method signature="runSuite()[pri:0, instance:org.giuseppeprivitera.tests.TestSuite@6771beb3]" started-at="2026-05-20T15:28:05 CEST" name="runSuite" finished-at="2026-05-20T15:28:39 CEST" duration-ms="34119" status="PASS">
+        <test-method signature="runSuite()[pri:0, instance:org.giuseppeprivitera.tests.TestSuite@f58853c]" started-at="2026-05-20T15:44:51 CEST" name="runSuite" finished-at="2026-05-20T15:45:25 CEST" duration-ms="33599" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runSuite -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.giuseppeprivitera.tests.TestSuite@6771beb3]" started-at="2026-05-20T15:28:39 CEST" name="tearDown" finished-at="2026-05-20T15:28:40 CEST" duration-ms="604" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.giuseppeprivitera.tests.TestSuite@f58853c]" started-at="2026-05-20T15:45:25 CEST" name="tearDown" finished-at="2026-05-20T15:45:25 CEST" duration-ms="645" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- org.giuseppeprivitera.tests.TestSuite -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

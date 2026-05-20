@@ -1,10 +1,10 @@
 package org.giuseppeprivitera.tests;
 
+import org.testng.annotations.Test;
 import org.giuseppeprivitera.pageObjects.CartPage;
 import org.giuseppeprivitera.pageObjects.ProductPage;
 import org.giuseppeprivitera.pageObjects.SearchProductPage;
 import org.giuseppeprivitera.testUtils.BaseTest;
-import org.testng.annotations.Test;
 
 public class TestSuite extends BaseTest {
 	String country = "Argentina";
