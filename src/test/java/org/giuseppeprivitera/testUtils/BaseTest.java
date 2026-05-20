@@ -24,7 +24,7 @@ public class BaseTest {
 		Properties prop = new Properties();
 		// it reads the properties from 'data.properties' file
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + 
-				"//src//main//java//org.giuseppeprivitera.resources//data.properties");
+				"//src//main//java//org//giuseppeprivitera//resources//data.properties");
 		
 		// it loads the file
 		prop.load(fis);
@@ -35,8 +35,8 @@ public class BaseTest {
 		options = new UiAutomator2Options();
 		options.setDeviceName(System.getProperty("androidDeviceName"));
 		options.setChromedriverExecutable(System.getProperty("user.dir") + "//src//test//java//"
-				+ "org.giuseppeprivitera.resources//chromedriver");
-	    options.setApp(System.getProperty("user.dir") + "//src//test//java//org.giuseppeprivitera.resources//"
+				+ "org//giuseppeprivitera//resources//chromedriver");
+	    options.setApp(System.getProperty("user.dir") + "//src//test//java//org//giuseppeprivitera//resources//"
 	    		+ "General-Store.apk");
 	    
 	    driver = new AndroidDriver(new URI(prop.getProperty("uri")).toURL(), options);
