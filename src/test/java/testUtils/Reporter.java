@@ -6,14 +6,14 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 
-public class ExtentReporter {
-	ExtentReports extent;
-	ExtentSparkReporter reporter;
-	String path;
-	String tester = "Giuseppe Privitera";
+public class Reporter {
+	static ExtentReports extent;
+	static ExtentSparkReporter reporter;
+	static String path;
+	static String tester = "Giuseppe Privitera";
 	
 	@BeforeTest
-	public ExtentReports getReporterObject() {
+	public static ExtentReports getReporterObject() {
 		path = System.getProperty("user.dir") + "\\reports\\index.html";
 		reporter = new ExtentSparkReporter(path);
 		reporter.config().setReportName("General Store report");
