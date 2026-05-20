@@ -6,10 +6,10 @@ import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 public class Listener implements ITestListener {
 	ExtentTest test;
-	
 	ExtentReports extent = Reporter.getReporterObject();
 
 	@Override
@@ -20,14 +20,12 @@ public class Listener implements ITestListener {
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
-		ITestListener.super.onTestSuccess(result);
+		test.log(Status.PASS, "Test passed");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
-		ITestListener.super.onTestFailure(result);
+		test.fail(result.getThrowable());
 	}
 
 	@Override
