@@ -55,5 +55,15 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/home/giuseppeprivitera/.m2/repository/org/testng/testng/7.12.0/testng-7.12.0.jar" sourcepath="/home/giuseppeprivitera/.m2/repository/org/testng/testng/7.12.0/testng-7.12.0-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.testng"/>
+			<attribute name="maven.artifactId" value="testng"/>
+			<attribute name="maven.version" value="7.12.0"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/giuseppeprivitera/.var/app/org.eclipse.Java/eclipse/plugins/org.testng_7.11.0.r202503091654.jar" sourcepath="/home/giuseppeprivitera/.var/app/org.eclipse.Java/eclipse/plugins/org.testng.source_7.11.0.r202503091654.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
