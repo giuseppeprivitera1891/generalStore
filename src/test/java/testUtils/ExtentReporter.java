@@ -1,7 +1,10 @@
 package testUtils;
 
+import org.testng.annotations.BeforeTest;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 
 public class ExtentReporter {
 	ExtentReports extent;
@@ -9,6 +12,7 @@ public class ExtentReporter {
 	String path;
 	String tester = "Giuseppe Privitera";
 	
+	@BeforeTest
 	public ExtentReports getReporterObject() {
 		path = System.getProperty("user.dir") + "\\reports\\index.html";
 		reporter = new ExtentSparkReporter(path);
