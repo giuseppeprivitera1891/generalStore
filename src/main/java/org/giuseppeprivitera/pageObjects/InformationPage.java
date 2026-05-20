@@ -51,7 +51,7 @@ public class InformationPage extends AndroidActions {
 	
 	public void setName(String name) {
 		nameField.sendKeys(name);
-		System.out.println("The set name is: " + nameField.getText());
+		System.out.println("The set name is: " + nameField.getText().trim());
 	}
 	
 	public void setGender(String gender) {

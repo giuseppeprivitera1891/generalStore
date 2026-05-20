@@ -8,7 +8,7 @@ import org.giuseppeprivitera.testUtils.BaseTest;
 
 public class TestSuite extends BaseTest {
 	String country = "Argentina";
-	String name = "";
+	String name = "Klaudia Mondelez";
 	String gender = "Female";
 	String expectedTitle = "Products";
 	String[] myProducts = {"Converse All Star", "Air Jordan 4 Retro"};
